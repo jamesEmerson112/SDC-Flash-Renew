@@ -4,7 +4,8 @@ var controller = require('../controllers')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  // res.render('index', { title: 'Express' });
+  res.status(200).json({message: 'Welcome to the homepage'});
 });
 
 // Connect controller methods to their corresponding routes
