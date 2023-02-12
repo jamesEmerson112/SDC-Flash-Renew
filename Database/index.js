@@ -4,11 +4,12 @@ const Pool = require('pg-pool');
 // config for Pool
 const config = {
   host: process.env.LOCAHOST,
-  user: process.env.USER,
+  user: process.env.USERNAME,
   database: process.env.DATABASE,
   password: process.env.PASSWORD,
   port: process.env.PORT_DB,
 };
+
 
 const pool = new Pool(config);
 
