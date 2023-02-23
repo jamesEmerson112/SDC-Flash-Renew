@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -36,6 +37,17 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+const pool = require('./Database');
+pool.query(`
+SELECT * FROM public."Product" ORDER BY id ASC LIMIT 5
+`, (err, res) => {
+  if (err) {
+    console.error( err);
+  } else {
+    console.log(res.rows);
+  }
 });
 
 module.exports = app;
