@@ -41,7 +41,7 @@ app.use(function(err, req, res, next) {
 
 const pool = require('./Database');
 pool.query(`
-SELECT * FROM public."Product" ORDER BY id ASC LIMIT 5
+SELECT * FROM public."Product" ORDER BY id ASC LIMIT 10
 `, (err, res) => {
   if (err) {
     console.error( err);
